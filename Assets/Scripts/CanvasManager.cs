@@ -3,31 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CanvasManager : MonoBehaviour {
-
-    private Canvas canvas;
+    
     public CameraMovement CameraController;
     public GameObject OnStartRemoveObject;
-
-	// Use this for initialization
-	void Start () {
-        canvas = GetComponent<Canvas>();
-
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
+    
     //Play action.
     public void playAction() {
-        canvas.enabled = false;
+        //Hide this main menu canvas
+        GetComponent<Canvas>().enabled = false;
 
+        //Check if the start remove object is actually set and then destroy it.
         if (OnStartRemoveObject != null)
             Destroy(OnStartRemoveObject);
 
+        //Check if the camera controller is set and start the machine.
         if (CameraController != null)
         {
+            //Reset camera so it starts back at the first object with 0 time.
             CameraController.ResetCamera();
             CameraController.Playing = true;
         }
