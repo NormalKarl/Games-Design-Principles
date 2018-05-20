@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CameraMovement : MonoBehaviour {
 
+    public Canvas ResetCanvas;
+
     //CamerOffset is used to add additional space to the camera when travelling between
     //FollowObject's. Otherwise the camera may be inside the 
     public Vector3 CameraOffset;
@@ -39,7 +41,10 @@ public class CameraMovement : MonoBehaviour {
 
                 //If the objectIndex is larger then the list then just set to the end.
                 if (objectIndex >= FollowObjects.Length)
+                {
+                    ResetCanvas.enabled = true;
                     objectIndex = FollowObjects.Length - 1;
+                }
 
                 //Update object index.
                 followObj = FollowObjects[objectIndex];
