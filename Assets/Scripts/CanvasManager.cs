@@ -19,6 +19,7 @@ public class CanvasManager : MonoBehaviour {
 		
 	}
 
+    //Play action.
     public void playAction() {
         canvas.enabled = false;
 
@@ -32,8 +33,10 @@ public class CanvasManager : MonoBehaviour {
         }
     }
 
+    //Exit action.
     public void exitAction()
     {
+        //Close game.
         Application.Quit();
     }
 

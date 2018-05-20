@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CameraMovement : MonoBehaviour {
 
+    //The canvas contained a reset and exit button.
     public Canvas ResetCanvas;
 
     //CamerOffset is used to add additional space to the camera when travelling between

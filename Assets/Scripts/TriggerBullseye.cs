@@ -12,9 +12,12 @@ public class TriggerBullseye : MonoBehaviour {
 
         foreach(Transform transform in CheckObjects)
         {
-            if (GameObject.ReferenceEquals(transform.gameObject, other.gameObject))
+            if (ReferenceEquals(transform.gameObject, other.gameObject))
             {
-                Destroy(RemoveObject.gameObject);
+                if(RemoveObject != null)
+                {
+                    Destroy(RemoveObject.gameObject);
+                }
             }
         }
     }
