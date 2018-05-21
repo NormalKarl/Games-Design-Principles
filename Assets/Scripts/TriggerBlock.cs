@@ -13,7 +13,7 @@ public class TriggerBlock : MonoBehaviour {
         foreach(GameObject obj in TestObjects)
         {
             //Test if any of the objects in the TestObjects list actually collide.
-            if (ReferenceEquals(obj, collider.gameObject))
+            if (ReferenceEquals(obj, collider.gameObject) && PhysicsObject.scene.IsValid())
             {
                 //This will set the objects physics to effectivly be enabled.
                 PhysicsObject.GetComponent<Rigidbody>().isKinematic = false;
